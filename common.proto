@@ -7,4 +7,5 @@ package common;
 
 message Fitness {
   double energy = 1;
+  double distance = 2;
 }

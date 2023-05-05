@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "si.um.feri.lpm.grpc.kaze";
+
+package kaze;
+
+service KazeService {
+  rpc fitness (KazeKnobs) returns (Fitness) {}
+}
+
+message Fitness {
+  int32 sim_num = 1;
+  double position = 2;
+  bool collision = 3;
+}
+
+message KazeKnobs {
+  int32 sim_num = 1;
+  repeated int32 building_heights = 2;
+  int32 surf_pressure = 3;
+  double surf_roughness = 4;
+  int32 surf_temp = 5;
+  double init_wind_speed_h = 6;
+  double init_wind_speed_v = 7;
+}

@@ -10,9 +10,23 @@ service SunflowService {
   rpc fitness (SunflowKnobs) returns (common.Fitness) {}
 }
 
+enum Filter {
+  BOX = 0;
+  TRIANGLE = 1;
+  CATMULL_ROM = 2;
+  MITCHELL = 3;
+  LANCZOS = 4;
+  BLACKMAN_HARRIS = 5;
+  SINC = 6;
+  GAUSSIAN = 7;
+}
+
 message SunflowKnobs {
   int32 threads = 1;
   int32 resolution = 2;
   int32 aaMin = 3;
   int32 aaMax = 4;
+  int32 bucketSize = 5;
+  int32 aoSamples = 6;
+  Filter filter = 7;
 }

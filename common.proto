@@ -9,4 +9,5 @@ message Fitness {
   double energy = 1;
   double distance = 2;
   int64 time = 3;
+  bool killed = 4;
 }

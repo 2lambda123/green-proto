@@ -29,4 +29,5 @@ message SunflowKnobs {
   int32 bucketSize = 5;
   int32 aoSamples = 6;
   Filter filter = 7;
+  optional int64 maxDuration = 8;
 }
